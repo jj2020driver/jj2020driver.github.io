@@ -5,11 +5,7 @@ import Home from "./pages/Home";
 function App() {
     return (
         <div id="app">
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-            </Switch>
+        	<Home />
         </div>
     );
 }
