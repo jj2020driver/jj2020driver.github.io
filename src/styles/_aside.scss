@@ -1,0 +1,49 @@
+.input {
+	@include raw-box;
+	appearance: none;
+	display: block;
+	width: 100%;
+	padding: 9px 16px;
+	font-size: 14px;
+	line-height: normal;
+	background: #fff;
+	color: $color-text-dark;
+	border-radius: 20px;
+	&::placeholder {
+		opacity: .5;
+		color: $color-text-dark;
+	}
+}
+
+.history {
+	.title {
+		font-size: 16px;
+		font-weight: 500;
+	}
+	ul {
+		margin-top: 14px;
+		li {
+			margin-top: 5px;
+			span {
+				display: inline-block;
+				font-size: 14px;
+				font-weight: 500;
+				word-break: break-word;
+				cursor: pointer;
+				transition: opacity $time12;
+				&:hover {
+					opacity: .65;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.sidebar {
+	.history {
+		margin-top: 20px;
+	}
+}

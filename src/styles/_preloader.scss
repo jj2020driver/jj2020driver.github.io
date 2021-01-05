@@ -1,0 +1,37 @@
+@keyframes dot-preloader {
+	0% {
+		transform: translate(0, 0);
+	}
+	23% {
+		transform: translate(0, -60%);
+	}
+	46% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+.preloader-dots {
+	display: inline-block;
+	vertical-align: middle;
+	&__dot {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		margin-right: 6px;
+		border-radius: 50%;
+		background: $color-text-base;
+		animation: dot-preloader .7s infinite;
+		&:nth-child(2) {
+			animation-delay: .1s;
+		}
+		&:nth-child(3) {
+			animation-delay: .2s;
+		}
+	}
+}
+.preloader {
+	padding: 60px 0;
+	text-align: center;
+}
