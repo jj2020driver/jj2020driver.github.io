@@ -1,0 +1,62 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html,
+body {
+	font-size: 0;
+	color: $color-text-base;
+	background: $color-bg;
+}
+body {
+	overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: normal;
+}
+
+ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color-text-base;
+}
+
+
+// basic page grid elements
+.pwr {
+	@include clr;
+	position: relative;
+	width: 1140px;
+	max-width: 100%;
+	margin: 0 auto;
+
+	.pct {
+		padding: 40px 0;
+	}
+
+	@include r($bp-desktop-sm) {
+		padding: 0 24px;
+	}
+	@include r($bp-tab-sm) {
+		padding: 0 12px;
+	}
+}
+
+
+
+

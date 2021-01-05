@@ -1,0 +1,131 @@
+@keyframes grid-block {
+	0% {
+		opacity: 0;
+		transform: translate(0, 20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+.grid-block {
+	padding: 17px 16px;
+	color: $color-text-dark;
+	background: #fff;
+	border-radius: 10px;
+	line-height: 1.45;
+	word-break: break-word;
+	opacity: 0;
+	transform: translate(0, 20px);
+	animation: grid-block $time45 forwards;
+	&__title {
+		font-size: 17px;
+		font-weight: 700;
+		a {
+			color: $color-text-dark;
+			transition: color $time12;
+			&:hover {
+				color: $color-company;
+			}
+		}
+	}
+	&__info {
+		margin-top: 12px;
+		font-size: 14px;
+		&__value {
+			font-weight: 600;
+		}
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	@for $i from 1 to 90 {
+		&:nth-child(#{$i+1}) { animation-delay: $i * .05s; }
+	}
+}
+.loading-status {
+	font-size: 15px;
+	grid-column: span 2;
+	text-align: center;
+	b {
+		display: inline-block;
+		padding: 10px 0;
+		font-size: 17px;
+	}
+	@include r($bp-phone-md) {
+		grid-column: span 1;
+	}
+}
+.infinite-scroll-component {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+	overflow: visible !important;
+	@include r($bp-tab-sm) {
+		grid-gap: 12px;
+	}
+	@include r($bp-phone-md) {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+@keyframes search-empty {
+	0% {
+		opacity: 0;
+		transform: translate(0, 6px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+.search-empty {
+	padding-top: 7px;
+	font-size: 16px;
+	font-weight: 500;
+	opacity: 0;
+	transform: translate(0, 6px);
+	animation: search-empty .25s forwards;
+	@include r($bp-tab-sm) {
+		padding-top: 0;
+	}
+}
+
+.section-search {
+	.pct {
+		padding: 35px 0 60px;
+		display: flex;
+		.sidebar {
+			flex: 0 0 250px;
+			margin-right: 30px;
+		}
+		.main {
+			flex: auto;
+		}
+	}
+	@include r($bp-desktop-md) {
+		.pct {
+			padding: 25px 0 50px;
+		}
+	}
+	@include r($bp-tab-md) {
+		.pct {
+			flex-direction: column;
+			.sidebar {
+				flex: auto;
+				margin-right: 0;
+				margin-bottom: 35px;
+			}
+		}
+	}
+	@include r($bp-phone-md) {
+		.pct {
+			padding: 20px 0 40px;
+		}
+	}
+}
+
+
+
+
